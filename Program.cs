@@ -116,7 +116,24 @@
         }
         public static void Roller()
         {
+            Console.WriteLine("This program will roll the dices until we get a double.");
+            Dice dice1 = new Dice();
+            Dice dice2 = new Dice();
+            int count = 0;
+            do
+            {
+                Console.WriteLine("Rolling...");
+                dice1.RollDice();
+                dice2.RollDice();
+                dice1.DrawDice();
+                dice2.DrawDice();
+                count++;
+                Console.WriteLine("This program has rolled " + count + " times.");
 
+                Thread.Sleep(500);
+            }
+            while (dice1.Roll != dice2.Roll);
+            Console.WriteLine("It's a double!");
         }
         public static void Prompter()
         {
